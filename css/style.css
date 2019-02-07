@@ -1,0 +1,223 @@
+@font-face {
+    font-family: roboto;
+    src: url(../fonts/Roboto-Black.ttf);
+}
+@font-face {
+    font-family: Behrens;
+    src: url(../fonts/11751.ttf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    font-family: roboto;
+    font-size: 18px;
+    --logo-color: rgb(235, 62, 177);
+}
+body{
+    min-height: 100vh;
+    background-color: rgb(31, 27, 28);
+}
+.row{
+    max-width: 1300px;
+    margin: auto;
+}
+header{
+    height: 160px;
+    /* background-color: #333; */
+    background: url(../img/5248-SeriesHeaders_NARSHP_2000x800.jpg);
+    background-size: cover;
+    border-bottom: 5px solid rgb(224, 197, 197);
+    background-position-y: center;
+    background-size: cover;
+    position: relative;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.7);
+}
+.logo{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5vw;
+    transition: .5s;
+}
+.logo::before{
+    content: '';
+    display: block;
+    width: 0px;
+    height: 3px;
+    background-color: var(--logo-color);
+    border-radius: 5px;
+    position: absolute;
+    bottom: 0px;
+    transition: .5s;
+}
+.logo:hover::before{
+    width: 147px;
+}
+.logo:hover span{
+    height: 70%;
+}
+h1{
+    color: white;
+    text-shadow: 0px 0px 5px black;
+    display: inline;
+    border-radius: 5px;
+    padding-left: 5px;
+    transition: .5s;
+    cursor: pointer;
+    position: relative;
+}
+.logo span{
+    font-size: 2rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    height: 0%;
+    overflow: hidden;
+    border-bottom-right-radius: 100%;
+    color: var(--logo-color);
+    transition: .5s;
+}
+h1 > mark{
+    transition: .5s;
+    font-family: Behrens;
+    font-size: 39px;
+    border-radius: 5px;
+    background-color: var(--logo-color);
+    color: white;
+    padding: 0px 5px;
+    display: inline-block;
+    text-shadow: 3px 5px 5px rgba(0, 0, 0, 0.7);
+}
+h1:hover > mark{
+    border-top-left-radius: 100%;
+    border-bottom-right-radius: 100%;
+}
+form{
+    display: table;
+    margin: 40px auto 0 auto;
+    width: 1350px;
+    max-width: 90vw;
+}
+form label{
+    position: relative;
+    display: block;
+}
+p.active{
+    top: 0;
+    transform: translateY(-120%) scale(0.8);
+    left: 0%;
+}
+form p{
+    position: absolute;
+    top: 50%;
+    left: 2%;
+    transform: translateY(-50%);
+    z-index: 0;
+    transition: .5s;
+    color: #e2e2e2;
+}
+form input{
+    position: relative;
+    z-index: 2;
+    padding-left: 2%;
+    width: 100%;
+    max-width: 90vw;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    border: 2px solid rgb(224, 197, 197);
+    outline: none;
+    font-family: roboto;
+    font-size: 18px;
+    color: #e2e2e2;
+}
+label i{
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    z-index: 3;
+    right: 2%;
+    color: rgb(224, 197, 197);
+    cursor: pointer;
+    transition: .5s;
+    padding: 10px;
+}
+i:hover{
+    color: var(--logo-color);
+}
+.moviesCont{
+    display: flex;
+    flex-wrap: wrap;
+    background: rgb(38, 37, 39);
+    border-radius: 2px;
+    margin-top: 40px;
+    justify-content: center;
+    list-style: none;
+    width: 100%;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.7);
+    color: #e2e2e2;
+    padding: 20px 0 15px 0;
+    position: relative;
+}
+.moviesCont > h3{
+    position: absolute;
+    left: 5%;
+    top: 0;
+    z-index: 10;
+}
+.moviesCont li{
+    max-width: 90vw;
+    margin: 20px;
+}
+.moviesCont div{
+    transition: .5s;
+    background-color: black;
+    overflow: hidden;
+    width: 250px;
+    height: 350px;
+    max-width: 90vw;
+    position: relative;
+}
+.moviesCont div:hover img{
+    opacity: 0.7;
+    transform: scale(1.1);
+}
+.moviesCont div:hover h2{
+    transform: translateY(0%);
+}
+.moviesCont h2{
+    position: absolute;
+    top: 0;
+    background-color: rgba(0,0,0,.3);
+    color: rgb(224, 197, 197);
+    padding: 5px 10px;
+    transform: translateY(-100%);
+    transition: .5s;
+    transition-delay: .25s;
+}
+.moviesCont p{
+    font-size: 1.2rem;
+    max-width: 250px;
+    color: #e2e2e2;
+}
+.moviesCont li img{
+    max-width: 100%;
+    cursor: pointer;
+    transition: .5s;
+}
+footer{
+    background-color: #333;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.7);
+    margin-top: 40px;
+    border-radius: 2px;
+    color: #e2e2e2;
+    padding: 20px 0;
+}
+footer > p {
+    text-align: center;
+    font-size: .9rem;
+}
